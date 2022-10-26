@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/telos/sun-status-remix/app/routes/index.jsx?browser", "../../../app/routes/index.jsx", "../../../app/components/views/Root/RootView.jsx"],
+  "sourcesContent": ["export { default, links, meta } from \"/Users/telos/sun-status-remix/app/routes/index.jsx\";", "\nimport RootView from \"../components/views/Root/RootView\";\n\nimport styles from \"../components/views/Root/root-view.css\";\n\nexport function links() {\n  return [{ rel: \"stylesheet\", href: styles }];\n}\n\nexport let meta = () => {\n  return {\n    title: \"My Posts\",\n  };\n};\n\nexport default function Index() {\n  return (\n    <RootView />\n  );\n}\n", "\nimport Form from \"../../common/Form\";\n\nexport default function RootView() {\n    \n  return (\n    <section className=\"container root-container\">\n      <h1>Welcome to Sun Status! Enter the IP address of a location where you would like to determine the Sunset and Sunrise.</h1>\n       {/* <Form name=\"ipAddress\" buttonValue=\"Get sun status\" label=\"Enter IP address\" placeholder=\"Enter IP address\" action=\"/sun-status\" method=\"GET\" /> */}\n      \n    </section>\n  );\n}\n"],
+  "mappings": ";;;;;;AAAA;;;ACAA;;;ACAA;AAGe,oBAAoB;AAEjC,SACE,oCAAC,WAAD;AAAA,IAAS,WAAU;AAAA,KACjB,oCAAC,MAAD,MAAI;AAAA;;;;;;ADFH,iBAAiB;AACtB,SAAO,CAAC,EAAE,KAAK,cAAc,MAAM;AAAA;AAG9B,IAAI,OAAO,MAAM;AACtB,SAAO;AAAA,IACL,OAAO;AAAA;AAAA;AAII,iBAAiB;AAC9B,SACE,oCAAC,UAAD;AAAA;",
+  "names": []
+}

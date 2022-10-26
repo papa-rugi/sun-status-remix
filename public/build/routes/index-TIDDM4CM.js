@@ -1,7 +1,4 @@
-import {
-  React,
-  init_react
-} from "/build/_shared/chunk-E7VMOUYL.js";
+import { React, init_react } from "/build/_shared/chunk-E7VMOUYL.js";
 
 // browser-route-module:/Users/telos/Documents/remix-demo/app/routes/index.jsx?browser
 init_react();
@@ -10,23 +7,30 @@ init_react();
 init_react();
 var meta = () => {
   return {
-    title: "My Posts"
+    title: "My Posts",
   };
 };
 function Index() {
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("form", {
-    action: "/post",
-    method: "GET"
-  }, "Post Id: ", /* @__PURE__ */ React.createElement("input", {
-    type: "number",
-    name: "postId"
-  }), /* @__PURE__ */ React.createElement("input", {
-    type: "submit",
-    value: "Get Posts"
-  })));
+  return /* @__PURE__ */ React.createElement(
+    "div",
+    null,
+    /* @__PURE__ */ React.createElement(
+      "form",
+      {
+        action: "/post",
+        method: "GET",
+      },
+      "Post Id: ",
+      /* @__PURE__ */ React.createElement("input", {
+        type: "number",
+        name: "postId",
+      }),
+      /* @__PURE__ */ React.createElement("input", {
+        type: "submit",
+        value: "Get Posts",
+      })
+    )
+  );
 }
-export {
-  Index as default,
-  meta
-};
+export { Index as default, meta };
 //# sourceMappingURL=/build/routes/index-TIDDM4CM.js.map

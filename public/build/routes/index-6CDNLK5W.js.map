@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/views/RootView.jsx", "browser-route-module:/Users/telos/sun-status-remix/app/routes/index.jsx?browser", "../../../app/routes/index.jsx"],
+  "sourcesContent": ["", "export { default, meta } from \"/Users/telos/sun-status-remix/app/routes/index.jsx\";", "\nimport RootView from \"../components/views/RootView\"\nexport let meta = () => {\n  return {\n    title: \"My Posts\",\n  };\n};\n\nexport default function Index() {\n  return (\n    <RootView />\n  );\n}\n"],
+  "mappings": ";;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA;;;ACAA;AACA,sBAAqB;AACd,IAAI,OAAO,MAAM;AACtB,SAAO;AAAA,IACL,OAAO;AAAA;AAAA;AAII,iBAAiB;AAC9B,SACE,oCAAC,yBAAD;AAAA;",
+  "names": []
+}

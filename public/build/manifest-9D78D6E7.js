@@ -1,1 +1,53 @@
-window.__remixManifest={"version":"9d78d6e7","entry":{"module":"/build/entry.client-GBXKYGQ7.js","imports":["/build/_shared/chunk-UFS2CITE.js","/build/_shared/chunk-VOADKNFO.js","/build/_shared/chunk-E7VMOUYL.js"]},"routes":{"root":{"id":"root","path":"","module":"/build/root-4PGPXSIT.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/index":{"id":"routes/index","parentId":"root","index":true,"module":"/build/routes/index-XOZBKKNJ.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/post":{"id":"routes/post","parentId":"root","path":"post","module":"/build/routes/post-MJZ7DZPG.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/post/index":{"id":"routes/post/index","parentId":"routes/post","index":true,"module":"/build/routes/post/index-TYBMXFQW.js","hasAction":false,"hasLoader":true,"hasCatchBoundary":false,"hasErrorBoundary":false}},"url":"/build/manifest-9D78D6E7.js"};
+window.__remixManifest = {
+  version: "9d78d6e7",
+  entry: {
+    module: "/build/entry.client-GBXKYGQ7.js",
+    imports: [
+      "/build/_shared/chunk-UFS2CITE.js",
+      "/build/_shared/chunk-VOADKNFO.js",
+      "/build/_shared/chunk-E7VMOUYL.js",
+    ],
+  },
+  routes: {
+    root: {
+      id: "root",
+      path: "",
+      module: "/build/root-4PGPXSIT.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/index": {
+      id: "routes/index",
+      parentId: "root",
+      index: true,
+      module: "/build/routes/index-XOZBKKNJ.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/post": {
+      id: "routes/post",
+      parentId: "root",
+      path: "post",
+      module: "/build/routes/post-MJZ7DZPG.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/post/index": {
+      id: "routes/post/index",
+      parentId: "routes/post",
+      index: true,
+      module: "/build/routes/post/index-TYBMXFQW.js",
+      hasAction: false,
+      hasLoader: true,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+  },
+  url: "/build/manifest-9D78D6E7.js",
+};

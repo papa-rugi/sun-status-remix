@@ -1,1 +1,53 @@
-window.__remixManifest={"version":"4455bfc8","entry":{"module":"/build/entry.client-VL4CU63X.js","imports":["/build/_shared/chunk-D6L7F4Q7.js","/build/_shared/chunk-UNNMHWP3.js","/build/_shared/chunk-AKSB5QXU.js"]},"routes":{"root":{"id":"root","path":"","module":"/build/root-KDY2NZKY.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/index":{"id":"routes/index","parentId":"root","index":true,"module":"/build/routes/index-2XZ4SUM5.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/sun-status":{"id":"routes/sun-status","parentId":"root","path":"sun-status","module":"/build/routes/sun-status-AUTW67VG.js","hasAction":false,"hasLoader":false,"hasCatchBoundary":false,"hasErrorBoundary":false},"routes/sun-status/index":{"id":"routes/sun-status/index","parentId":"routes/sun-status","index":true,"module":"/build/routes/sun-status/index-GAGZU4KS.js","hasAction":false,"hasLoader":true,"hasCatchBoundary":false,"hasErrorBoundary":false}},"url":"/build/manifest-4455BFC8.js"};
+window.__remixManifest = {
+  version: "4455bfc8",
+  entry: {
+    module: "/build/entry.client-VL4CU63X.js",
+    imports: [
+      "/build/_shared/chunk-D6L7F4Q7.js",
+      "/build/_shared/chunk-UNNMHWP3.js",
+      "/build/_shared/chunk-AKSB5QXU.js",
+    ],
+  },
+  routes: {
+    root: {
+      id: "root",
+      path: "",
+      module: "/build/root-KDY2NZKY.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/index": {
+      id: "routes/index",
+      parentId: "root",
+      index: true,
+      module: "/build/routes/index-2XZ4SUM5.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/sun-status": {
+      id: "routes/sun-status",
+      parentId: "root",
+      path: "sun-status",
+      module: "/build/routes/sun-status-AUTW67VG.js",
+      hasAction: false,
+      hasLoader: false,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+    "routes/sun-status/index": {
+      id: "routes/sun-status/index",
+      parentId: "routes/sun-status",
+      index: true,
+      module: "/build/routes/sun-status/index-GAGZU4KS.js",
+      hasAction: false,
+      hasLoader: true,
+      hasCatchBoundary: false,
+      hasErrorBoundary: false,
+    },
+  },
+  url: "/build/manifest-4455BFC8.js",
+};

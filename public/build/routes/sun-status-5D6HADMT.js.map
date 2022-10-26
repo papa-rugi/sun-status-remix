@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/telos/sun-status-remix/app/routes/sun-status.jsx?browser", "../../../app/routes/sun-status.jsx", "../../../app/components/views/SunStatus/SunStatus.jsx"],
+  "sourcesContent": ["export { default, links } from \"/Users/telos/sun-status-remix/app/routes/sun-status.jsx\";", "import { Outlet } from \"react-router\";\nimport SunStatusView from \"../components/views/SunStatus/SunStatus\";\nimport styles from \"../components/views/SunStatus/sun-status-view.css\";\n\n\nexport function links() {\n  return [{ rel: \"stylesheet\", href: styles }];\n}\nexport default function SunStatus() {\n  return (\n    <>\n      <SunStatusView>\n       <Outlet />\n      </SunStatusView >\n    </>\n  );\n}\n", "\nexport default function RootView({children}) {\n    \n    return (\n      <section class=\"masthead\" role=\"img\" aria-label=\"Image Description\">\n        <h1>\n        {children}\n        </h1>\n      </section>\n          \n     \n    );\n  }\n  "],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAAA,0BAAuB;;;ACAvB;AACe,kBAAkB,EAAC,YAAW;AAEzC,SACE,oCAAC,WAAD;AAAA,IAAS,OAAM;AAAA,IAAW,MAAK;AAAA,IAAM,cAAW;AAAA,KAC9C,oCAAC,MAAD,MACC;AAAA;;;;;;ADDF,iBAAiB;AACtB,SAAO,CAAC,EAAE,KAAK,cAAc,MAAM;AAAA;AAEtB,qBAAqB;AAClC,SACE,0DACE,oCAAC,UAAD,MACC,oCAAC,4BAAD;AAAA;",
+  "names": []
+}

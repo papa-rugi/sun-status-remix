@@ -1,19 +1,17 @@
-import {
-  useLoaderData
-} from "/build/_shared/chunk-UFS2CITE.js";
+import { useLoaderData } from "/build/_shared/chunk-UFS2CITE.js";
 import "/build/_shared/chunk-VOADKNFO.js";
 import {
   React,
   __commonJS,
   __toModule,
-  init_react
+  init_react,
 } from "/build/_shared/chunk-E7VMOUYL.js";
 
 // node_modules/axios/lib/helpers/bind.js
 var require_bind = __commonJS({
   "node_modules/axios/lib/helpers/bind.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     module.exports = function bind(fn, thisArg) {
       return function wrap() {
         var args = new Array(arguments.length);
@@ -23,14 +21,14 @@ var require_bind = __commonJS({
         return fn.apply(thisArg, args);
       };
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/utils.js
 var require_utils = __commonJS({
   "node_modules/axios/lib/utils.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var bind = require_bind();
     var toString = Object.prototype.toString;
     function isArray(val) {
@@ -40,7 +38,14 @@ var require_utils = __commonJS({
       return typeof val === "undefined";
     }
     function isBuffer(val) {
-      return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor) && typeof val.constructor.isBuffer === "function" && val.constructor.isBuffer(val);
+      return (
+        val !== null &&
+        !isUndefined(val) &&
+        val.constructor !== null &&
+        !isUndefined(val.constructor) &&
+        typeof val.constructor.isBuffer === "function" &&
+        val.constructor.isBuffer(val)
+      );
     }
     function isArrayBuffer(val) {
       return toString.call(val) === "[object ArrayBuffer]";
@@ -95,7 +100,12 @@ var require_utils = __commonJS({
       return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, "");
     }
     function isStandardBrowserEnv() {
-      if (typeof navigator !== "undefined" && (navigator.product === "ReactNative" || navigator.product === "NativeScript" || navigator.product === "NS")) {
+      if (
+        typeof navigator !== "undefined" &&
+        (navigator.product === "ReactNative" ||
+          navigator.product === "NativeScript" ||
+          navigator.product === "NS")
+      ) {
         return false;
       }
       return typeof window !== "undefined" && typeof document !== "undefined";
@@ -175,19 +185,25 @@ var require_utils = __commonJS({
       merge,
       extend,
       trim,
-      stripBOM
+      stripBOM,
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/buildURL.js
 var require_buildURL = __commonJS({
   "node_modules/axios/lib/helpers/buildURL.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     function encode(val) {
-      return encodeURIComponent(val).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]");
+      return encodeURIComponent(val)
+        .replace(/%3A/gi, ":")
+        .replace(/%24/g, "$")
+        .replace(/%2C/gi, ",")
+        .replace(/%20/g, "+")
+        .replace(/%5B/gi, "[")
+        .replace(/%5D/gi, "]");
     }
     module.exports = function buildURL(url, params, paramsSerializer) {
       if (!params) {
@@ -229,24 +245,28 @@ var require_buildURL = __commonJS({
       }
       return url;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/InterceptorManager.js
 var require_InterceptorManager = __commonJS({
   "node_modules/axios/lib/core/InterceptorManager.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     function InterceptorManager() {
       this.handlers = [];
     }
-    InterceptorManager.prototype.use = function use(fulfilled, rejected, options) {
+    InterceptorManager.prototype.use = function use(
+      fulfilled,
+      rejected,
+      options
+    ) {
       this.handlers.push({
         fulfilled,
         rejected,
         synchronous: options ? options.synchronous : false,
-        runWhen: options ? options.runWhen : null
+        runWhen: options ? options.runWhen : null,
       });
       return this.handlers.length - 1;
     };
@@ -263,32 +283,41 @@ var require_InterceptorManager = __commonJS({
       });
     };
     module.exports = InterceptorManager;
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/normalizeHeaderName.js
 var require_normalizeHeaderName = __commonJS({
   "node_modules/axios/lib/helpers/normalizeHeaderName.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     module.exports = function normalizeHeaderName(headers, normalizedName) {
       utils.forEach(headers, function processHeader(value, name) {
-        if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+        if (
+          name !== normalizedName &&
+          name.toUpperCase() === normalizedName.toUpperCase()
+        ) {
           headers[normalizedName] = value;
           delete headers[name];
         }
       });
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/enhanceError.js
 var require_enhanceError = __commonJS({
   "node_modules/axios/lib/core/enhanceError.js"(exports, module) {
     init_react();
-    "use strict";
-    module.exports = function enhanceError(error, config, code, request, response) {
+    ("use strict");
+    module.exports = function enhanceError(
+      error,
+      config,
+      code,
+      request,
+      response
+    ) {
       error.config = config;
       if (code) {
         error.code = code;
@@ -308,118 +337,141 @@ var require_enhanceError = __commonJS({
           stack: this.stack,
           config: this.config,
           code: this.code,
-          status: this.response && this.response.status ? this.response.status : null
+          status:
+            this.response && this.response.status ? this.response.status : null,
         };
       };
       return error;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/createError.js
 var require_createError = __commonJS({
   "node_modules/axios/lib/core/createError.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var enhanceError = require_enhanceError();
-    module.exports = function createError(message, config, code, request, response) {
+    module.exports = function createError(
+      message,
+      config,
+      code,
+      request,
+      response
+    ) {
       var error = new Error(message);
       return enhanceError(error, config, code, request, response);
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/settle.js
 var require_settle = __commonJS({
   "node_modules/axios/lib/core/settle.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var createError = require_createError();
     module.exports = function settle(resolve, reject, response) {
       var validateStatus = response.config.validateStatus;
-      if (!response.status || !validateStatus || validateStatus(response.status)) {
+      if (
+        !response.status ||
+        !validateStatus ||
+        validateStatus(response.status)
+      ) {
         resolve(response);
       } else {
-        reject(createError("Request failed with status code " + response.status, response.config, null, response.request, response));
+        reject(
+          createError(
+            "Request failed with status code " + response.status,
+            response.config,
+            null,
+            response.request,
+            response
+          )
+        );
       }
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/cookies.js
 var require_cookies = __commonJS({
   "node_modules/axios/lib/helpers/cookies.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
-    module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
-      return {
-        write: function write(name, value, expires, path, domain, secure) {
-          var cookie = [];
-          cookie.push(name + "=" + encodeURIComponent(value));
-          if (utils.isNumber(expires)) {
-            cookie.push("expires=" + new Date(expires).toGMTString());
-          }
-          if (utils.isString(path)) {
-            cookie.push("path=" + path);
-          }
-          if (utils.isString(domain)) {
-            cookie.push("domain=" + domain);
-          }
-          if (secure === true) {
-            cookie.push("secure");
-          }
-          document.cookie = cookie.join("; ");
-        },
-        read: function read(name) {
-          var match = document.cookie.match(new RegExp("(^|;\\s*)(" + name + ")=([^;]*)"));
-          return match ? decodeURIComponent(match[3]) : null;
-        },
-        remove: function remove(name) {
-          this.write(name, "", Date.now() - 864e5);
-        }
-      };
-    }() : function nonStandardBrowserEnv() {
-      return {
-        write: function write() {
-        },
-        read: function read() {
-          return null;
-        },
-        remove: function remove() {
-        }
-      };
-    }();
-  }
+    module.exports = utils.isStandardBrowserEnv()
+      ? (function standardBrowserEnv() {
+          return {
+            write: function write(name, value, expires, path, domain, secure) {
+              var cookie = [];
+              cookie.push(name + "=" + encodeURIComponent(value));
+              if (utils.isNumber(expires)) {
+                cookie.push("expires=" + new Date(expires).toGMTString());
+              }
+              if (utils.isString(path)) {
+                cookie.push("path=" + path);
+              }
+              if (utils.isString(domain)) {
+                cookie.push("domain=" + domain);
+              }
+              if (secure === true) {
+                cookie.push("secure");
+              }
+              document.cookie = cookie.join("; ");
+            },
+            read: function read(name) {
+              var match = document.cookie.match(
+                new RegExp("(^|;\\s*)(" + name + ")=([^;]*)")
+              );
+              return match ? decodeURIComponent(match[3]) : null;
+            },
+            remove: function remove(name) {
+              this.write(name, "", Date.now() - 864e5);
+            },
+          };
+        })()
+      : (function nonStandardBrowserEnv() {
+          return {
+            write: function write() {},
+            read: function read() {
+              return null;
+            },
+            remove: function remove() {},
+          };
+        })();
+  },
 });
 
 // node_modules/axios/lib/helpers/isAbsoluteURL.js
 var require_isAbsoluteURL = __commonJS({
   "node_modules/axios/lib/helpers/isAbsoluteURL.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     module.exports = function isAbsoluteURL(url) {
       return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/combineURLs.js
 var require_combineURLs = __commonJS({
   "node_modules/axios/lib/helpers/combineURLs.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     module.exports = function combineURLs(baseURL, relativeURL) {
-      return relativeURL ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "") : baseURL;
+      return relativeURL
+        ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "")
+        : baseURL;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/buildFullPath.js
 var require_buildFullPath = __commonJS({
   "node_modules/axios/lib/core/buildFullPath.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var isAbsoluteURL = require_isAbsoluteURL();
     var combineURLs = require_combineURLs();
     module.exports = function buildFullPath(baseURL, requestedURL) {
@@ -428,14 +480,14 @@ var require_buildFullPath = __commonJS({
       }
       return requestedURL;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/parseHeaders.js
 var require_parseHeaders = __commonJS({
   "node_modules/axios/lib/helpers/parseHeaders.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var ignoreDuplicateOf = [
       "age",
@@ -454,7 +506,7 @@ var require_parseHeaders = __commonJS({
       "proxy-authorization",
       "referer",
       "retry-after",
-      "user-agent"
+      "user-agent",
     ];
     module.exports = function parseHeaders(headers) {
       var parsed = {};
@@ -481,55 +533,71 @@ var require_parseHeaders = __commonJS({
       });
       return parsed;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/isURLSameOrigin.js
 var require_isURLSameOrigin = __commonJS({
   "node_modules/axios/lib/helpers/isURLSameOrigin.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
-    module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
-      var msie = /(msie|trident)/i.test(navigator.userAgent);
-      var urlParsingNode = document.createElement("a");
-      var originURL;
-      function resolveURL(url) {
-        var href = url;
-        if (msie) {
-          urlParsingNode.setAttribute("href", href);
-          href = urlParsingNode.href;
-        }
-        urlParsingNode.setAttribute("href", href);
-        return {
-          href: urlParsingNode.href,
-          protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, "") : "",
-          host: urlParsingNode.host,
-          search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, "") : "",
-          hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, "") : "",
-          hostname: urlParsingNode.hostname,
-          port: urlParsingNode.port,
-          pathname: urlParsingNode.pathname.charAt(0) === "/" ? urlParsingNode.pathname : "/" + urlParsingNode.pathname
-        };
-      }
-      originURL = resolveURL(window.location.href);
-      return function isURLSameOrigin(requestURL) {
-        var parsed = utils.isString(requestURL) ? resolveURL(requestURL) : requestURL;
-        return parsed.protocol === originURL.protocol && parsed.host === originURL.host;
-      };
-    }() : function nonStandardBrowserEnv() {
-      return function isURLSameOrigin() {
-        return true;
-      };
-    }();
-  }
+    module.exports = utils.isStandardBrowserEnv()
+      ? (function standardBrowserEnv() {
+          var msie = /(msie|trident)/i.test(navigator.userAgent);
+          var urlParsingNode = document.createElement("a");
+          var originURL;
+          function resolveURL(url) {
+            var href = url;
+            if (msie) {
+              urlParsingNode.setAttribute("href", href);
+              href = urlParsingNode.href;
+            }
+            urlParsingNode.setAttribute("href", href);
+            return {
+              href: urlParsingNode.href,
+              protocol: urlParsingNode.protocol
+                ? urlParsingNode.protocol.replace(/:$/, "")
+                : "",
+              host: urlParsingNode.host,
+              search: urlParsingNode.search
+                ? urlParsingNode.search.replace(/^\?/, "")
+                : "",
+              hash: urlParsingNode.hash
+                ? urlParsingNode.hash.replace(/^#/, "")
+                : "",
+              hostname: urlParsingNode.hostname,
+              port: urlParsingNode.port,
+              pathname:
+                urlParsingNode.pathname.charAt(0) === "/"
+                  ? urlParsingNode.pathname
+                  : "/" + urlParsingNode.pathname,
+            };
+          }
+          originURL = resolveURL(window.location.href);
+          return function isURLSameOrigin(requestURL) {
+            var parsed = utils.isString(requestURL)
+              ? resolveURL(requestURL)
+              : requestURL;
+            return (
+              parsed.protocol === originURL.protocol &&
+              parsed.host === originURL.host
+            );
+          };
+        })()
+      : (function nonStandardBrowserEnv() {
+          return function isURLSameOrigin() {
+            return true;
+          };
+        })();
+  },
 });
 
 // node_modules/axios/lib/cancel/Cancel.js
 var require_Cancel = __commonJS({
   "node_modules/axios/lib/cancel/Cancel.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     function Cancel(message) {
       this.message = message;
     }
@@ -538,14 +606,14 @@ var require_Cancel = __commonJS({
     };
     Cancel.prototype.__CANCEL__ = true;
     module.exports = Cancel;
-  }
+  },
 });
 
 // node_modules/axios/lib/adapters/xhr.js
 var require_xhr = __commonJS({
   "node_modules/axios/lib/adapters/xhr.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var settle = require_settle();
     var cookies = require_cookies();
@@ -576,33 +644,50 @@ var require_xhr = __commonJS({
         var request = new XMLHttpRequest();
         if (config.auth) {
           var username = config.auth.username || "";
-          var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : "";
-          requestHeaders.Authorization = "Basic " + btoa(username + ":" + password);
+          var password = config.auth.password
+            ? unescape(encodeURIComponent(config.auth.password))
+            : "";
+          requestHeaders.Authorization =
+            "Basic " + btoa(username + ":" + password);
         }
         var fullPath = buildFullPath(config.baseURL, config.url);
-        request.open(config.method.toUpperCase(), buildURL(fullPath, config.params, config.paramsSerializer), true);
+        request.open(
+          config.method.toUpperCase(),
+          buildURL(fullPath, config.params, config.paramsSerializer),
+          true
+        );
         request.timeout = config.timeout;
         function onloadend() {
           if (!request) {
             return;
           }
-          var responseHeaders = "getAllResponseHeaders" in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-          var responseData = !responseType || responseType === "text" || responseType === "json" ? request.responseText : request.response;
+          var responseHeaders =
+            "getAllResponseHeaders" in request
+              ? parseHeaders(request.getAllResponseHeaders())
+              : null;
+          var responseData =
+            !responseType || responseType === "text" || responseType === "json"
+              ? request.responseText
+              : request.response;
           var response = {
             data: responseData,
             status: request.status,
             statusText: request.statusText,
             headers: responseHeaders,
             config,
-            request
+            request,
           };
-          settle(function _resolve(value) {
-            resolve(value);
-            done();
-          }, function _reject(err) {
-            reject(err);
-            done();
-          }, response);
+          settle(
+            function _resolve(value) {
+              resolve(value);
+              done();
+            },
+            function _reject(err) {
+              reject(err);
+              done();
+            },
+            response
+          );
           request = null;
         }
         if ("onloadend" in request) {
@@ -612,7 +697,13 @@ var require_xhr = __commonJS({
             if (!request || request.readyState !== 4) {
               return;
             }
-            if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf("file:") === 0)) {
+            if (
+              request.status === 0 &&
+              !(
+                request.responseURL &&
+                request.responseURL.indexOf("file:") === 0
+              )
+            ) {
               return;
             }
             setTimeout(onloadend);
@@ -622,7 +713,9 @@ var require_xhr = __commonJS({
           if (!request) {
             return;
           }
-          reject(createError("Request aborted", config, "ECONNABORTED", request));
+          reject(
+            createError("Request aborted", config, "ECONNABORTED", request)
+          );
           request = null;
         };
         request.onerror = function handleError() {
@@ -630,23 +723,39 @@ var require_xhr = __commonJS({
           request = null;
         };
         request.ontimeout = function handleTimeout() {
-          var timeoutErrorMessage = config.timeout ? "timeout of " + config.timeout + "ms exceeded" : "timeout exceeded";
+          var timeoutErrorMessage = config.timeout
+            ? "timeout of " + config.timeout + "ms exceeded"
+            : "timeout exceeded";
           var transitional = config.transitional || defaults.transitional;
           if (config.timeoutErrorMessage) {
             timeoutErrorMessage = config.timeoutErrorMessage;
           }
-          reject(createError(timeoutErrorMessage, config, transitional.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED", request));
+          reject(
+            createError(
+              timeoutErrorMessage,
+              config,
+              transitional.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED",
+              request
+            )
+          );
           request = null;
         };
         if (utils.isStandardBrowserEnv()) {
-          var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ? cookies.read(config.xsrfCookieName) : void 0;
+          var xsrfValue =
+            (config.withCredentials || isURLSameOrigin(fullPath)) &&
+            config.xsrfCookieName
+              ? cookies.read(config.xsrfCookieName)
+              : void 0;
           if (xsrfValue) {
             requestHeaders[config.xsrfHeaderName] = xsrfValue;
           }
         }
         if ("setRequestHeader" in request) {
           utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-            if (typeof requestData === "undefined" && key.toLowerCase() === "content-type") {
+            if (
+              typeof requestData === "undefined" &&
+              key.toLowerCase() === "content-type"
+            ) {
               delete requestHeaders[key];
             } else {
               request.setRequestHeader(key, val);
@@ -666,17 +775,23 @@ var require_xhr = __commonJS({
           request.upload.addEventListener("progress", config.onUploadProgress);
         }
         if (config.cancelToken || config.signal) {
-          onCanceled = function(cancel) {
+          onCanceled = function (cancel) {
             if (!request) {
               return;
             }
-            reject(!cancel || cancel && cancel.type ? new Cancel("canceled") : cancel);
+            reject(
+              !cancel || (cancel && cancel.type)
+                ? new Cancel("canceled")
+                : cancel
+            );
             request.abort();
             request = null;
           };
           config.cancelToken && config.cancelToken.subscribe(onCanceled);
           if (config.signal) {
-            config.signal.aborted ? onCanceled() : config.signal.addEventListener("abort", onCanceled);
+            config.signal.aborted
+              ? onCanceled()
+              : config.signal.addEventListener("abort", onCanceled);
           }
         }
         if (!requestData) {
@@ -685,22 +800,25 @@ var require_xhr = __commonJS({
         request.send(requestData);
       });
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/defaults.js
 var require_defaults = __commonJS({
   "node_modules/axios/lib/defaults.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var normalizeHeaderName = require_normalizeHeaderName();
     var enhanceError = require_enhanceError();
     var DEFAULT_CONTENT_TYPE = {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/x-www-form-urlencoded",
     };
     function setContentTypeIfUnset(headers, value) {
-      if (!utils.isUndefined(headers) && utils.isUndefined(headers["Content-Type"])) {
+      if (
+        !utils.isUndefined(headers) &&
+        utils.isUndefined(headers["Content-Type"])
+      ) {
         headers["Content-Type"] = value;
       }
     }
@@ -708,7 +826,10 @@ var require_defaults = __commonJS({
       var adapter;
       if (typeof XMLHttpRequest !== "undefined") {
         adapter = require_xhr();
-      } else if (typeof process !== "undefined" && Object.prototype.toString.call(process) === "[object process]") {
+      } else if (
+        typeof process !== "undefined" &&
+        Object.prototype.toString.call(process) === "[object process]"
+      ) {
         adapter = require_xhr();
       }
       return adapter;
@@ -730,47 +851,70 @@ var require_defaults = __commonJS({
       transitional: {
         silentJSONParsing: true,
         forcedJSONParsing: true,
-        clarifyTimeoutError: false
+        clarifyTimeoutError: false,
       },
       adapter: getDefaultAdapter(),
-      transformRequest: [function transformRequest(data, headers) {
-        normalizeHeaderName(headers, "Accept");
-        normalizeHeaderName(headers, "Content-Type");
-        if (utils.isFormData(data) || utils.isArrayBuffer(data) || utils.isBuffer(data) || utils.isStream(data) || utils.isFile(data) || utils.isBlob(data)) {
+      transformRequest: [
+        function transformRequest(data, headers) {
+          normalizeHeaderName(headers, "Accept");
+          normalizeHeaderName(headers, "Content-Type");
+          if (
+            utils.isFormData(data) ||
+            utils.isArrayBuffer(data) ||
+            utils.isBuffer(data) ||
+            utils.isStream(data) ||
+            utils.isFile(data) ||
+            utils.isBlob(data)
+          ) {
+            return data;
+          }
+          if (utils.isArrayBufferView(data)) {
+            return data.buffer;
+          }
+          if (utils.isURLSearchParams(data)) {
+            setContentTypeIfUnset(
+              headers,
+              "application/x-www-form-urlencoded;charset=utf-8"
+            );
+            return data.toString();
+          }
+          if (
+            utils.isObject(data) ||
+            (headers && headers["Content-Type"] === "application/json")
+          ) {
+            setContentTypeIfUnset(headers, "application/json");
+            return stringifySafely(data);
+          }
           return data;
-        }
-        if (utils.isArrayBufferView(data)) {
-          return data.buffer;
-        }
-        if (utils.isURLSearchParams(data)) {
-          setContentTypeIfUnset(headers, "application/x-www-form-urlencoded;charset=utf-8");
-          return data.toString();
-        }
-        if (utils.isObject(data) || headers && headers["Content-Type"] === "application/json") {
-          setContentTypeIfUnset(headers, "application/json");
-          return stringifySafely(data);
-        }
-        return data;
-      }],
-      transformResponse: [function transformResponse(data) {
-        var transitional = this.transitional || defaults.transitional;
-        var silentJSONParsing = transitional && transitional.silentJSONParsing;
-        var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
-        var strictJSONParsing = !silentJSONParsing && this.responseType === "json";
-        if (strictJSONParsing || forcedJSONParsing && utils.isString(data) && data.length) {
-          try {
-            return JSON.parse(data);
-          } catch (e) {
-            if (strictJSONParsing) {
-              if (e.name === "SyntaxError") {
-                throw enhanceError(e, this, "E_JSON_PARSE");
+        },
+      ],
+      transformResponse: [
+        function transformResponse(data) {
+          var transitional = this.transitional || defaults.transitional;
+          var silentJSONParsing =
+            transitional && transitional.silentJSONParsing;
+          var forcedJSONParsing =
+            transitional && transitional.forcedJSONParsing;
+          var strictJSONParsing =
+            !silentJSONParsing && this.responseType === "json";
+          if (
+            strictJSONParsing ||
+            (forcedJSONParsing && utils.isString(data) && data.length)
+          ) {
+            try {
+              return JSON.parse(data);
+            } catch (e) {
+              if (strictJSONParsing) {
+                if (e.name === "SyntaxError") {
+                  throw enhanceError(e, this, "E_JSON_PARSE");
+                }
+                throw e;
               }
-              throw e;
             }
           }
-        }
-        return data;
-      }],
+          return data;
+        },
+      ],
       timeout: 0,
       xsrfCookieName: "XSRF-TOKEN",
       xsrfHeaderName: "X-XSRF-TOKEN",
@@ -781,25 +925,31 @@ var require_defaults = __commonJS({
       },
       headers: {
         common: {
-          "Accept": "application/json, text/plain, */*"
-        }
-      }
+          Accept: "application/json, text/plain, */*",
+        },
+      },
     };
-    utils.forEach(["delete", "get", "head"], function forEachMethodNoData(method) {
-      defaults.headers[method] = {};
-    });
-    utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
-      defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-    });
+    utils.forEach(
+      ["delete", "get", "head"],
+      function forEachMethodNoData(method) {
+        defaults.headers[method] = {};
+      }
+    );
+    utils.forEach(
+      ["post", "put", "patch"],
+      function forEachMethodWithData(method) {
+        defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+      }
+    );
     module.exports = defaults;
-  }
+  },
 });
 
 // node_modules/axios/lib/core/transformData.js
 var require_transformData = __commonJS({
   "node_modules/axios/lib/core/transformData.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var defaults = require_defaults();
     module.exports = function transformData(data, headers, fns) {
@@ -809,25 +959,25 @@ var require_transformData = __commonJS({
       });
       return data;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/cancel/isCancel.js
 var require_isCancel = __commonJS({
   "node_modules/axios/lib/cancel/isCancel.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     module.exports = function isCancel(value) {
       return !!(value && value.__CANCEL__);
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/dispatchRequest.js
 var require_dispatchRequest = __commonJS({
   "node_modules/axios/lib/core/dispatchRequest.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var transformData = require_transformData();
     var isCancel = require_isCancel();
@@ -844,34 +994,59 @@ var require_dispatchRequest = __commonJS({
     module.exports = function dispatchRequest(config) {
       throwIfCancellationRequested(config);
       config.headers = config.headers || {};
-      config.data = transformData.call(config, config.data, config.headers, config.transformRequest);
-      config.headers = utils.merge(config.headers.common || {}, config.headers[config.method] || {}, config.headers);
-      utils.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function cleanHeaderConfig(method) {
-        delete config.headers[method];
-      });
-      var adapter = config.adapter || defaults.adapter;
-      return adapter(config).then(function onAdapterResolution(response) {
-        throwIfCancellationRequested(config);
-        response.data = transformData.call(config, response.data, response.headers, config.transformResponse);
-        return response;
-      }, function onAdapterRejection(reason) {
-        if (!isCancel(reason)) {
-          throwIfCancellationRequested(config);
-          if (reason && reason.response) {
-            reason.response.data = transformData.call(config, reason.response.data, reason.response.headers, config.transformResponse);
-          }
+      config.data = transformData.call(
+        config,
+        config.data,
+        config.headers,
+        config.transformRequest
+      );
+      config.headers = utils.merge(
+        config.headers.common || {},
+        config.headers[config.method] || {},
+        config.headers
+      );
+      utils.forEach(
+        ["delete", "get", "head", "post", "put", "patch", "common"],
+        function cleanHeaderConfig(method) {
+          delete config.headers[method];
         }
-        return Promise.reject(reason);
-      });
+      );
+      var adapter = config.adapter || defaults.adapter;
+      return adapter(config).then(
+        function onAdapterResolution(response) {
+          throwIfCancellationRequested(config);
+          response.data = transformData.call(
+            config,
+            response.data,
+            response.headers,
+            config.transformResponse
+          );
+          return response;
+        },
+        function onAdapterRejection(reason) {
+          if (!isCancel(reason)) {
+            throwIfCancellationRequested(config);
+            if (reason && reason.response) {
+              reason.response.data = transformData.call(
+                config,
+                reason.response.data,
+                reason.response.headers,
+                config.transformResponse
+              );
+            }
+          }
+          return Promise.reject(reason);
+        }
+      );
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/mergeConfig.js
 var require_mergeConfig = __commonJS({
   "node_modules/axios/lib/core/mergeConfig.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     module.exports = function mergeConfig(config1, config2) {
       config2 = config2 || {};
@@ -913,41 +1088,45 @@ var require_mergeConfig = __commonJS({
         }
       }
       var mergeMap = {
-        "url": valueFromConfig2,
-        "method": valueFromConfig2,
-        "data": valueFromConfig2,
-        "baseURL": defaultToConfig2,
-        "transformRequest": defaultToConfig2,
-        "transformResponse": defaultToConfig2,
-        "paramsSerializer": defaultToConfig2,
-        "timeout": defaultToConfig2,
-        "timeoutMessage": defaultToConfig2,
-        "withCredentials": defaultToConfig2,
-        "adapter": defaultToConfig2,
-        "responseType": defaultToConfig2,
-        "xsrfCookieName": defaultToConfig2,
-        "xsrfHeaderName": defaultToConfig2,
-        "onUploadProgress": defaultToConfig2,
-        "onDownloadProgress": defaultToConfig2,
-        "decompress": defaultToConfig2,
-        "maxContentLength": defaultToConfig2,
-        "maxBodyLength": defaultToConfig2,
-        "transport": defaultToConfig2,
-        "httpAgent": defaultToConfig2,
-        "httpsAgent": defaultToConfig2,
-        "cancelToken": defaultToConfig2,
-        "socketPath": defaultToConfig2,
-        "responseEncoding": defaultToConfig2,
-        "validateStatus": mergeDirectKeys
+        url: valueFromConfig2,
+        method: valueFromConfig2,
+        data: valueFromConfig2,
+        baseURL: defaultToConfig2,
+        transformRequest: defaultToConfig2,
+        transformResponse: defaultToConfig2,
+        paramsSerializer: defaultToConfig2,
+        timeout: defaultToConfig2,
+        timeoutMessage: defaultToConfig2,
+        withCredentials: defaultToConfig2,
+        adapter: defaultToConfig2,
+        responseType: defaultToConfig2,
+        xsrfCookieName: defaultToConfig2,
+        xsrfHeaderName: defaultToConfig2,
+        onUploadProgress: defaultToConfig2,
+        onDownloadProgress: defaultToConfig2,
+        decompress: defaultToConfig2,
+        maxContentLength: defaultToConfig2,
+        maxBodyLength: defaultToConfig2,
+        transport: defaultToConfig2,
+        httpAgent: defaultToConfig2,
+        httpsAgent: defaultToConfig2,
+        cancelToken: defaultToConfig2,
+        socketPath: defaultToConfig2,
+        responseEncoding: defaultToConfig2,
+        validateStatus: mergeDirectKeys,
       };
-      utils.forEach(Object.keys(config1).concat(Object.keys(config2)), function computeConfigValue(prop) {
-        var merge = mergeMap[prop] || mergeDeepProperties;
-        var configValue = merge(prop);
-        utils.isUndefined(configValue) && merge !== mergeDirectKeys || (config[prop] = configValue);
-      });
+      utils.forEach(
+        Object.keys(config1).concat(Object.keys(config2)),
+        function computeConfigValue(prop) {
+          var merge = mergeMap[prop] || mergeDeepProperties;
+          var configValue = merge(prop);
+          (utils.isUndefined(configValue) && merge !== mergeDirectKeys) ||
+            (config[prop] = configValue);
+        }
+      );
       return config;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/env/data.js
@@ -955,35 +1134,61 @@ var require_data = __commonJS({
   "node_modules/axios/lib/env/data.js"(exports, module) {
     init_react();
     module.exports = {
-      "version": "0.25.0"
+      version: "0.25.0",
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/validator.js
 var require_validator = __commonJS({
   "node_modules/axios/lib/helpers/validator.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var VERSION = require_data().version;
     var validators = {};
-    ["object", "boolean", "number", "function", "string", "symbol"].forEach(function(type, i) {
-      validators[type] = function validator(thing) {
-        return typeof thing === type || "a" + (i < 1 ? "n " : " ") + type;
-      };
-    });
-    var deprecatedWarnings = {};
-    validators.transitional = function transitional(validator, version, message) {
-      function formatMessage(opt, desc) {
-        return "[Axios v" + VERSION + "] Transitional option '" + opt + "'" + desc + (message ? ". " + message : "");
+    ["object", "boolean", "number", "function", "string", "symbol"].forEach(
+      function (type, i) {
+        validators[type] = function validator(thing) {
+          return typeof thing === type || "a" + (i < 1 ? "n " : " ") + type;
+        };
       }
-      return function(value, opt, opts) {
+    );
+    var deprecatedWarnings = {};
+    validators.transitional = function transitional(
+      validator,
+      version,
+      message
+    ) {
+      function formatMessage(opt, desc) {
+        return (
+          "[Axios v" +
+          VERSION +
+          "] Transitional option '" +
+          opt +
+          "'" +
+          desc +
+          (message ? ". " + message : "")
+        );
+      }
+      return function (value, opt, opts) {
         if (validator === false) {
-          throw new Error(formatMessage(opt, " has been removed" + (version ? " in " + version : "")));
+          throw new Error(
+            formatMessage(
+              opt,
+              " has been removed" + (version ? " in " + version : "")
+            )
+          );
         }
         if (version && !deprecatedWarnings[opt]) {
           deprecatedWarnings[opt] = true;
-          console.warn(formatMessage(opt, " has been deprecated since v" + version + " and will be removed in the near future"));
+          console.warn(
+            formatMessage(
+              opt,
+              " has been deprecated since v" +
+                version +
+                " and will be removed in the near future"
+            )
+          );
         }
         return validator ? validator(value, opt, opts) : true;
       };
@@ -1012,16 +1217,16 @@ var require_validator = __commonJS({
     }
     module.exports = {
       assertOptions,
-      validators
+      validators,
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/core/Axios.js
 var require_Axios = __commonJS({
   "node_modules/axios/lib/core/Axios.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var buildURL = require_buildURL();
     var InterceptorManager = require_InterceptorManager();
@@ -1033,7 +1238,7 @@ var require_Axios = __commonJS({
       this.defaults = instanceConfig;
       this.interceptors = {
         request: new InterceptorManager(),
-        response: new InterceptorManager()
+        response: new InterceptorManager(),
       };
     }
     Axios.prototype.request = function request(configOrUrl, config) {
@@ -1056,24 +1261,42 @@ var require_Axios = __commonJS({
       }
       var transitional = config.transitional;
       if (transitional !== void 0) {
-        validator.assertOptions(transitional, {
-          silentJSONParsing: validators.transitional(validators.boolean),
-          forcedJSONParsing: validators.transitional(validators.boolean),
-          clarifyTimeoutError: validators.transitional(validators.boolean)
-        }, false);
+        validator.assertOptions(
+          transitional,
+          {
+            silentJSONParsing: validators.transitional(validators.boolean),
+            forcedJSONParsing: validators.transitional(validators.boolean),
+            clarifyTimeoutError: validators.transitional(validators.boolean),
+          },
+          false
+        );
       }
       var requestInterceptorChain = [];
       var synchronousRequestInterceptors = true;
-      this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
-        if (typeof interceptor.runWhen === "function" && interceptor.runWhen(config) === false) {
+      this.interceptors.request.forEach(function unshiftRequestInterceptors(
+        interceptor
+      ) {
+        if (
+          typeof interceptor.runWhen === "function" &&
+          interceptor.runWhen(config) === false
+        ) {
           return;
         }
-        synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous;
-        requestInterceptorChain.unshift(interceptor.fulfilled, interceptor.rejected);
+        synchronousRequestInterceptors =
+          synchronousRequestInterceptors && interceptor.synchronous;
+        requestInterceptorChain.unshift(
+          interceptor.fulfilled,
+          interceptor.rejected
+        );
       });
       var responseInterceptorChain = [];
-      this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
-        responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
+      this.interceptors.response.forEach(function pushResponseInterceptors(
+        interceptor
+      ) {
+        responseInterceptorChain.push(
+          interceptor.fulfilled,
+          interceptor.rejected
+        );
       });
       var promise;
       if (!synchronousRequestInterceptors) {
@@ -1103,7 +1326,10 @@ var require_Axios = __commonJS({
         return Promise.reject(error);
       }
       while (responseInterceptorChain.length) {
-        promise = promise.then(responseInterceptorChain.shift(), responseInterceptorChain.shift());
+        promise = promise.then(
+          responseInterceptorChain.shift(),
+          responseInterceptorChain.shift()
+        );
       }
       return promise;
     };
@@ -1112,35 +1338,49 @@ var require_Axios = __commonJS({
         throw new Error("Provided config url is not valid");
       }
       config = mergeConfig(this.defaults, config);
-      return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, "");
+      return buildURL(
+        config.url,
+        config.params,
+        config.paramsSerializer
+      ).replace(/^\?/, "");
     };
-    utils.forEach(["delete", "get", "head", "options"], function forEachMethodNoData(method) {
-      Axios.prototype[method] = function(url, config) {
-        return this.request(mergeConfig(config || {}, {
-          method,
-          url,
-          data: (config || {}).data
-        }));
-      };
-    });
-    utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
-      Axios.prototype[method] = function(url, data, config) {
-        return this.request(mergeConfig(config || {}, {
-          method,
-          url,
-          data
-        }));
-      };
-    });
+    utils.forEach(
+      ["delete", "get", "head", "options"],
+      function forEachMethodNoData(method) {
+        Axios.prototype[method] = function (url, config) {
+          return this.request(
+            mergeConfig(config || {}, {
+              method,
+              url,
+              data: (config || {}).data,
+            })
+          );
+        };
+      }
+    );
+    utils.forEach(
+      ["post", "put", "patch"],
+      function forEachMethodWithData(method) {
+        Axios.prototype[method] = function (url, data, config) {
+          return this.request(
+            mergeConfig(config || {}, {
+              method,
+              url,
+              data,
+            })
+          );
+        };
+      }
+    );
     module.exports = Axios;
-  }
+  },
 });
 
 // node_modules/axios/lib/cancel/CancelToken.js
 var require_CancelToken = __commonJS({
   "node_modules/axios/lib/cancel/CancelToken.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var Cancel = require_Cancel();
     function CancelToken(executor) {
       if (typeof executor !== "function") {
@@ -1151,9 +1391,8 @@ var require_CancelToken = __commonJS({
         resolvePromise = resolve;
       });
       var token = this;
-      this.promise.then(function(cancel) {
-        if (!token._listeners)
-          return;
+      this.promise.then(function (cancel) {
+        if (!token._listeners) return;
         var i;
         var l = token._listeners.length;
         for (i = 0; i < l; i++) {
@@ -1161,9 +1400,9 @@ var require_CancelToken = __commonJS({
         }
         token._listeners = null;
       });
-      this.promise.then = function(onfulfilled) {
+      this.promise.then = function (onfulfilled) {
         var _resolve;
-        var promise = new Promise(function(resolve) {
+        var promise = new Promise(function (resolve) {
           token.subscribe(resolve);
           _resolve = resolve;
         }).then(onfulfilled);
@@ -1212,43 +1451,43 @@ var require_CancelToken = __commonJS({
       });
       return {
         token,
-        cancel
+        cancel,
       };
     };
     module.exports = CancelToken;
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/spread.js
 var require_spread = __commonJS({
   "node_modules/axios/lib/helpers/spread.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     module.exports = function spread(callback) {
       return function wrap(arr) {
         return callback.apply(null, arr);
       };
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/helpers/isAxiosError.js
 var require_isAxiosError = __commonJS({
   "node_modules/axios/lib/helpers/isAxiosError.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     module.exports = function isAxiosError(payload) {
       return utils.isObject(payload) && payload.isAxiosError === true;
     };
-  }
+  },
 });
 
 // node_modules/axios/lib/axios.js
 var require_axios = __commonJS({
   "node_modules/axios/lib/axios.js"(exports, module) {
     init_react();
-    "use strict";
+    ("use strict");
     var utils = require_utils();
     var bind = require_bind();
     var Axios = require_Axios();
@@ -1277,7 +1516,7 @@ var require_axios = __commonJS({
     axios2.isAxiosError = require_isAxiosError();
     module.exports = axios2;
     module.exports.default = axios2;
-  }
+  },
 });
 
 // node_modules/axios/index.js
@@ -1285,7 +1524,7 @@ var require_axios2 = __commonJS({
   "node_modules/axios/index.js"(exports, module) {
     init_react();
     module.exports = require_axios();
-  }
+  },
 });
 
 // browser-route-module:/Users/telos/Documents/remix-demo/app/routes/post/index.jsx?browser
@@ -1296,9 +1535,13 @@ init_react();
 var import_axios = __toModule(require_axios2());
 function Index() {
   const data = useLoaderData();
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, data.postId), /* @__PURE__ */ React.createElement("h2", null, data.location), /* @__PURE__ */ React.createElement("h4", null, data.location));
+  return /* @__PURE__ */ React.createElement(
+    "div",
+    null,
+    /* @__PURE__ */ React.createElement("h1", null, data.postId),
+    /* @__PURE__ */ React.createElement("h2", null, data.location),
+    /* @__PURE__ */ React.createElement("h4", null, data.location)
+  );
 }
-export {
-  Index as default
-};
+export { Index as default };
 //# sourceMappingURL=/build/routes/post/index-RW7D2IM7.js.map

@@ -1,5 +1,5 @@
 {
-  "version": "f87b66b4",
+  "version": "87a04c61",
   "entry": {
     "module": "/build/entry.client-GBXKYGQ7.js",
     "imports": [
@@ -12,17 +12,17 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-A6YSMUVU.js",
+      "module": "/build/root-HG7PNR36.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
-      "hasErrorBoundary": false
+      "hasErrorBoundary": true
     },
     "routes/index": {
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-YNVRGDES.js",
+      "module": "/build/routes/index-FQOEGD6V.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -32,22 +32,22 @@
       "id": "routes/sun-status",
       "parentId": "root",
       "path": "sun-status",
-      "module": "/build/routes/sun-status-WBQHLPJC.js",
+      "module": "/build/routes/sun-status-DYCPOJEV.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
-      "hasErrorBoundary": false
+      "hasErrorBoundary": true
     },
     "routes/sun-status/index": {
       "id": "routes/sun-status/index",
       "parentId": "routes/sun-status",
       "index": true,
-      "module": "/build/routes/sun-status/index-VGCDIZL3.js",
+      "module": "/build/routes/sun-status/index-SW6BNCKL.js",
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-F87B66B4.js"
+  "url": "/build/manifest-87A04C61.js"
 }
