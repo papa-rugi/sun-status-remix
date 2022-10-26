@@ -7,9 +7,7 @@ import {
   ScrollRestoration,
 } from "remix";
 
-import  Layout  from "./components/layout/Layout";
-
-
+import Layout from "./components/layout/Layout";
 
 export function links() {
   return [
@@ -51,8 +49,8 @@ export function ErrorBoundary({ error }) {
         <Links />
       </head>
       <body>
-       <h2>
-        Oh no! You've hit the custom error boundary. Please try again. :/
+        <h2>
+          Oh no! You've hit the custom error boundary. Please try again. :/
         </h2>
         <Scripts />
       </body>

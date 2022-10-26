@@ -1,7 +1,15 @@
-export default Form = ({ name, buttonValue, label, placeholder, action, method, }) =>{
-    console.log(action, method)
-    return<> 
-    {/* <form action={action} method={method}>
+export default Form = ({
+  name,
+  buttonValue,
+  label,
+  placeholder,
+  action,
+  method,
+}) => {
+  console.log(action, method);
+  return (
+    <>
+      {/* <form action={action} method={method}>
         <div className="form-group">
             <label htmlFor="exampleInputEmail1">{label}</label>
             <input
@@ -22,4 +30,5 @@ export default Form = ({ name, buttonValue, label, placeholder, action, method, 
         </button>
     </form> */}
     </>
-}
+  );
+};
