@@ -13,22 +13,7 @@ export let meta = () => {
   };
 };
 
-export const action = async ({ request }) => {
-  const data = Object.fromEntries(await request.formData());
 
-  console.log(data);
-  // outputs { name: '', email: '', password: '', confirmPassword: '' }
-
-  const formErrors = {
-    ipIsValid: validateIp(data.ipAddress),
-  };
-
-  //if there are errors, we return the form errors
-  if (Object.values(formErrors).some(Boolean)) return { formErrors };
-
-  //if there are no errors, we return the form data
-  return { data };
-};
 
 export default function Index() {
   return <RootView />;
