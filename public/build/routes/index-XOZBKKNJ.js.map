@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/telos/Documents/remix-demo/app/routes/index.jsx?browser", "../../../app/routes/index.jsx"],
+  "sourcesContent": ["export { default, meta } from \"/Users/telos/Documents/remix-demo/app/routes/index.jsx\";", "\nexport let meta = () => {\n  return {\n    title: \"My Posts\"\n  };\n};\n\nexport default function Index() {\n  return (\n    <div>\n      <form action=\"/post\" method=\"GET\">\n        Post Id: <input  name=\"postId\" />\n        <input type=\"submit\" value=\"Get Posts\" />\n      </form>\n    </div>\n  );\n}"],
+  "mappings": ";;;;;;AAAA;;;ACAA;AACO,IAAI,OAAO,MAAM;AACtB,SAAO;AAAA,IACL,OAAO;AAAA;AAAA;AAII,iBAAiB;AAC9B,SACE,oCAAC,OAAD,MACE,oCAAC,QAAD;AAAA,IAAM,QAAO;AAAA,IAAQ,QAAO;AAAA,KAAM,aACvB,oCAAC,SAAD;AAAA,IAAQ,MAAK;AAAA,MACtB,oCAAC,SAAD;AAAA,IAAO,MAAK;AAAA,IAAS,OAAM;AAAA;AAAA;",
+  "names": []
+}
