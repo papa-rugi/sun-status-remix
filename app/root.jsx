@@ -11,6 +11,10 @@ export function meta() {
   return { title: "New Remix App" };
 }
 
+export function links() {
+  return [{ rel: "stylesheet", href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css' }];
+}
+
 export default function App() {
   return (
     <html lang="en">

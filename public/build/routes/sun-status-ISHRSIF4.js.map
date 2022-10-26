@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/telos/sun-status-remix/app/routes/sun-status.jsx?browser", "../../../app/routes/sun-status.jsx"],
+  "sourcesContent": ["export { default } from \"/Users/telos/sun-status-remix/app/routes/sun-status.jsx\";", "import { Outlet } from \"react-router\";\nexport default function SunStatus() {\n  return (\n    <>\n      <h1>My Posts</h1>\n      <Outlet />\n    </>\n  );\n}"],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAAA,0BAAuB;AACR,qBAAqB;AAClC,SACE,0DACE,oCAAC,MAAD,MAAI,aACJ,oCAAC,4BAAD;AAAA;",
+  "names": []
+}
