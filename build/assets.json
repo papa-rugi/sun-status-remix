@@ -1,5 +1,5 @@
 {
-  "version": "b817ffe9",
+  "version": "5a34f893",
   "entry": {
     "module": "/build/entry.client-BCSBWUCB.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-YLJXV6AV.js",
+      "module": "/build/root-GGH5CLM2.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -32,7 +32,7 @@
       "id": "routes/sun-status",
       "parentId": "root",
       "path": "sun-status",
-      "module": "/build/routes/sun-status-IQATIVUO.js",
+      "module": "/build/routes/sun-status-44U4YQLJ.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -42,12 +42,12 @@
       "id": "routes/sun-status/index",
       "parentId": "routes/sun-status",
       "index": true,
-      "module": "/build/routes/sun-status/index-3REY6N7U.js",
+      "module": "/build/routes/sun-status/index-OOUW3XYG.js",
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-B817FFE9.js"
+  "url": "/build/manifest-5A34F893.js"
 }

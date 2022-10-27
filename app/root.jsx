@@ -39,7 +39,7 @@ export default function App() {
   );
 }
 
-//Error boundary for root level errors
+//Here I've added a default error for the root of the app.
 export function ErrorBoundary({ error }) {
   console.error(error);
   return (

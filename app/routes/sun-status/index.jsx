@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useLoaderData, redirect } from "remix";
+import ResultsHeader from "~/components/common/ResultsHeader";
 
 import validateIp from "../../../helpers/validateIP";
 
+//handle form validation, and api requests on the server. (ensuring maximum speed for the user, regardless of bandwith)
 export async function loader({ request }) {
   try {
     const url = new URL(request.url);
     const search = new URLSearchParams(url.search);
     const ipAddress = search.get("ipAddress");
 
-    //if there are errors, we return the form errors
+    //validate user submission
     if (!validateIp(ipAddress)) return "IP is not valid";
 
     const resCoords = await axios.get(
@@ -28,6 +30,7 @@ export async function loader({ request }) {
       body: res.data.results,
     };
   } catch (err) {
+    //handle errors
     console.error(err);
     redirect("/");
     return {};
@@ -43,11 +46,11 @@ export default function Index() {
     <div>
       <h2>Results for the IP: {data.ipAddress} </h2>
       <br />
-      <h2>🌇SUNSET:</h2>
-      <h3>{sunset}</h3>
+      <ResultsHeader headerText={<>🌇SUNSET:</>} resultText={sunset} />
+     
       <br />
-      <h2>🌄SUNRISE:</h2>
-      <h3>{sunrise}</h3>
+      <ResultsHeader headerText={<>🌄SUNRISE:</>} resultText={sunrise} />
+
     </div>
   );
 }
