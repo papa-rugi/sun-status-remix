@@ -1,6 +1,5 @@
 export default function Navbar() {
   return (
-    <>
       <nav className="navbar navbar-expand-lg ">
         <a className="navbar-brand" href="/">
           Sun Status 🌅
@@ -12,6 +11,5 @@ export default function Navbar() {
           </a>
         </button>
       </nav>
-    </>
   );
 }

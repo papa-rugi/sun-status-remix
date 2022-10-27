@@ -15,6 +15,7 @@ export default function SunStatus() {
   );
 }
 
+//Added an error boundary in case this specific view fails.
 export function ErrorBoundary({ error }) {
   console.error(error);
   return (
